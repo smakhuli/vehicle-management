@@ -1,0 +1,12 @@
+<h1><%= "Vehicle with VIN #{@vehicle.vin}" %></h1>
+
+<p><%= "Year : #{@vehicle.year}" %></p>
+<p><%= "Make : #{@vehicle.make}" %></p>
+<p><%= "Model: #{@vehicle.model}" %></p>
+<p><%= "Trim : #{@vehicle.trim}" %></p>
+
+<ul>
+  <li><%= link_to "Back to Vehicles", vehicles_path %></li>
+  <li><%= link_to "Edit", edit_vehicle_path(@vehicle) %></li>
+  <li><%= button_to "Delete", @vehicle, method: :delete, data: { confirm: "Are you sure?" } %></li>
+</ul>

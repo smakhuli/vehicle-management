@@ -9,18 +9,19 @@
         <th>Make</th>
         <th>Model</th>
         <th>Trim</th>
-        <th>Options</th>
+        <th>Actions</th>
       </tr>
     </thead>
 
     <tbody>
       <% @vehicles.each do |vehicle| %>
         <tr>
-          <td><%= vehicle.vin %></td>
+          <td><%= link_to vehicle.vin, vehicle %></td>
           <td><%= vehicle.year %></td>
           <td><%= vehicle.make %></td>
           <td><%= vehicle.model %></td>
           <td><%= vehicle.trim %></td>
+          <td><%= link_to "Edit", edit_vehicle_path(vehicle) %></td>
           <td><%= button_to "Delete", vehicle, method: :delete, data: { confirm: "Are you sure?" } %></td>
       <% end %>
     </tbody>

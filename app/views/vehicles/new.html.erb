@@ -1,0 +1,47 @@
+<h1>New Vehicle</h1>
+
+<%= form_with model: @vehicle do |form| %>
+  <div>
+    <%= form.label :vin %><br>
+    <%= form.text_field :vin %>
+    <% @vehicle.errors.full_messages_for(:vin).each do |message| %>
+      <div><%= message %></div><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :year %><br>
+    <%= form.text_field :year %>
+    <% @vehicle.errors.full_messages_for(:year).each do |message| %>
+      <div><%= message %></div><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :make %><br>
+    <%= form.text_field :make %>
+    <% @vehicle.errors.full_messages_for(:make).each do |message| %>
+      <div><%= message %></div><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :model %><br>
+    <%= form.text_field :model %>
+    <% @vehicle.errors.full_messages_for(:model).each do |message| %>
+      <div><%= message %></div><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :trim %><br>
+    <%= form.text_field :trim %>
+    <% @vehicle.errors.full_messages_for(:trim).each do |message| %>
+      <div><%= message %></div><br>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
